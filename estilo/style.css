@@ -1,0 +1,281 @@
+@charset "UTF-8"; /* regra para acentuação*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* codigo retirado do google fonts, embed/import*/
+
+@font-face { /* font-face é uma regra - SEGUE A SINTAXE - */
+
+    font-family: 'Android'; /*define um nome personal para a fonte que está no diretorio ?? */
+
+    src:url('../fontes/idroid.otf')  format('opentype'); /*origem e formato - caminho do diretorio -- SE ATENTAR O CAMINHO DA PASTA, COM OS PONTOS ANTES DA BARRA*/ 
+
+    font-weight: normal; /*peso, intensidade da fonte*/
+}
+
+
+
+:root{ /* PSEUDO CLASSE (ROOT - tudo que colocar aqui, serve para todo documento) PARA GUARDAR AS VARIAVEIS
+ 
+ -- Sempre começar com dois traços
+ -- Dentro do mesmo ROOT é possível guardar as fontes tambem */
+
+
+
+--cor0:#c5ebd6; /* associa a cor especifica com a variavel cor0 */
+--cor1:#83e1ad; /* associa a cor especifica com a variavel cor1 */
+--cor2:#3ddc84; /* associa a cor especifica com a variavel cor2 */
+--cor3:#2fa866; /* associa a cor especifica com a variavel cor3 */
+--cor4:#1a5c37; /* associa a cor especifica com a variavel cor4 */
+--cor5:#063d1e; /* associa a cor especifica com a variavel cor5 */
+
+
+--fonte-padrao: Arial, Verdana, Helvetica, sans-serif; /*importante colocar mais de uma opção - caso uma não funcionar a proxima entra em ação*/
+--fonte-destaque:'Bebas Neue', cursive; /*foi retirado do google fonts, seria a família*/
+--fonte-android:'Android', cursive; /* cursive seria a fonte genérica caso não funcionar a primeira*/
+/*As linhas acima definem o tipo de fonte para cada variavel criada*/
+}
+
+*{  /*SELETOR GLOBAL, ABRANGE TODOS OS ELEMENTOS, INDEPENDENTE SE ESTAO DESCRITOS NO CODIGO OU NAO*/
+
+
+margin: 0px; /*deixa todos os boxs colados*/
+padding: 0px; /*define o espaço entre o conteudo e a borda*/
+ 
+}
+
+
+
+body{ /*abre o seletor para trabalhar as configurações APENAS do body*/
+
+    background-color: var(--cor0); /*define a cor do fundo do body e usa a variavel com a cor associada no root*/
+    font-family:var(--fonte-padrao) /*define a font usada no body e usa a variavel com a fonte associada no root*/;
+}
+
+a.externo::after { /*???????????????????*/
+
+    content: '\00A0\1F517';
+
+}
+
+
+header { /*abre o seletor para trabalhar as configurações APENAS do header*/
+
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /*faz um degrade no cabeçalho*/
+    background-color: var(--cor4); /*define a cor de fundo do header*/
+    min-height: 150px; /*vai deixar o cabeçalho com 150 pixels*/
+    text-align: center; /*vai centralizar o conteudo do cabeçalho*/
+    padding-top: 30px; /*vai dar um padding de 30px na parte de cima do box*/
+
+
+}
+
+header > h1{ /*abre o seletor para as configurações APENAS dos h1 que estiverem dentro do header*/
+
+    color:white; /*define a cor do h1 no header*/
+    font-family: var(--fonte-destaque); /*define a fonte do h1 no header, via variavel*/
+    font-size: 3em; /*define o tamanho da fonte no h1*/
+    font-weight: normal; /*define o peso da fonte, mais negrito, menos negrito*/
+    margin-bottom: 20px; /*define a margem de 20px na parte inferior do box*/
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.514); /*define o sombreamento no box*/
+    
+}
+
+header > p { /*abre o seletor para as configurações APENAS dos p que estiverem dentro do header*/
+
+    font-family: var(--fonte-padrao); /*define a família da fonte, usando a variavel fonte-padrão*/
+    font-size: 1.2em; /*tamanho da fonte usada*/
+    color: white; /*define a cor da fonte*/
+    max-width: 600px; /*largura máxima do box*/
+    padding-right: 10px; /*distancia entre o conteudo e a borda, para a direita*/
+    padding-left: 10px; /*distancia entre o conteudo e a borda, para a esquerda*/
+    margin: auto; /*centraliza o bloco*/
+    margin-bottom: 30px; /*define uma margem para baixo*/
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.315); /*define sombra no bloco, começando do meio dia, sentido horário*/
+}
+nav { /*abre o seletor para as configurações APENAS dos nav*/
+
+    background-color: var(--cor5); /*define a cor de fundo do bloco nav, usando a variavel cor5*/
+    padding: 10px; /*define a distancia entre o conteudo e a borda*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363); /*define a sombra no bloco, começando do meio dia, sentido horário*/
+}
+
+nav > a { /*abre o seletor para as configurações de todos os a (tag a) que estiverem dentro do NAV*/
+
+    color:var(--cor1); /*define a cor da letra de todos os a (tag a) que estiverem dentro do nav*/
+    padding: 10px; /*define a distancia entre o conteudo e a borda*/
+    border-radius: 5px; /*define o arredondamento das bordas(NAS QUINAS DO BLOCO)*/
+    text-decoration: none; /*faz com que perca o sublinhado*/
+    font-weight: bold ; /*define o peso, deixa a fonte em negrito*/
+    transition-duration: 1s; /*Deixa um efeito por 1 segundo ao passar o cursor para outro link*/
+
+}
+
+nav > a:hover { /* cria um efeito ao passar o mouse por cima dos links (tag a)*/
+    background-color: var(--cor3); /*define a cor de fundo do efeito criado*/
+    color:var(--cor5); /*define a cor da letra usado na tag a do nav*/
+}
+
+main { /*abre o seletor para as configurações APENAS do main*/
+    
+    min-width: 300px;  
+    max-width: 800px; /*quando chegar a 800px ele para de crescer*/
+    margin: auto; /*centraliza o bloco*/
+    margin-bottom: 30px; /*mexe na margem na parte inferior, colado com rodapé - 30px na parte inferior do box*/
+    padding: 20px;
+    background-color: white; /*define a cor do fundo do main*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418); /* define as sombras do bloco main*/
+    border-bottom-left-radius: 10px; /*para config a borda apenas na parte inferior esquerda*/
+    border-bottom-right-radius: 10px; /*para config a borda apenas na parte inferior direita*/
+
+
+}
+
+main > img { /*abre o seletor para configuração da tag imagem dentro do main*/
+
+    width: 100%; /* Deixa a largura em 100%*/
+
+}
+
+main img.pequena{/* classe pequena criada la na imagem, no doc android.html - define as config da imagemg do bugdroid*/
+
+    max-width: 350px; /*define a larguma maxima */
+    display: block; /*display - serve p/ indicar a forma como os elementos html serão dispostos -- block = bloco, transforma em bloco, 
+    ocupando toda largura e sempre começa numa nova linha*/ 
+    margin: auto; /*centraliza o elemento, no caso a imagem do bugdroid*/
+}
+
+div.video{ /* TUDO QUE ESTIVER dentro de video e dentro da div será configurado*/
+
+    background-color: var(--cor5); /*define a cor do fundo do bloco*/
+    margin: 0px -20px 30px; /*define as margens*/
+    padding: 20px; /*define o espaço entre o conteudo e a borda*/ 
+    padding-bottom: 58%; /*define a porcentagem do espaço entre o conteudo e a borda, para parte inferior, baixo*/
+    position: relative;  /*?????????*/
+
+}
+
+div.video > iframe { /* tudo que estiver dentro do iframe que esta dentro do video que esta dentro do div*/
+
+    position: absolute;
+    top: 5% ;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+
+
+}
+
+article > h1 { /*abre o seletor para configurar o h1 dentro do article*/
+
+    font-family: var(--fonte-android); /*define a familia de fonte para o h1 do article*/
+    font-size: 1.8em; /*define o tamanho da fonte*/
+    color: var(--cor4); /*define a cor da letra do h1*/
+
+}
+ article > h2 { /*abre o seletor para configurar o h2 dentro do article*/
+
+    font-family: var(--fonte-android); /*define a familia da vfonte para o h2 do article*/
+    color: var(--cor4); /*define a cor da letra do h2*/
+    font-size: 1.3em; /*define o tamanho da letra*/
+    font-weight: normal; /*define o peso da letra, se é tipo negrito*/
+    background-image: linear-gradient(to right, var(--cor1),transparent);/*Irá criar o gradiente para a direita da cor1 para transparente */
+    text-indent: 8px; /*abre o espaçamento na primeira linha, paragrafo comum*/
+    border-radius: 7px; /*define bordas arredondadas no bloco h2*/
+}
+
+
+
+
+main p { /*abre seletor para config de todos os p dentro do main*/
+
+    margin: 15px 0px 15px 0px; /*define o tamanho da margem sentido horario - começando meio dia*/
+    text-align: justify; /* justifica o texto */
+    text-indent: 30px; /*cria o espaço no começo da frase, paragrafo*/
+    font-size: 1em; /* define o tamanho da fonte nos paragrafos do main*/
+    line-height: 1.5em; /*espaço de altura entre uma linha e outra do paragrafo*/
+    font-family: var(--fonte-padrao); /*define a familia da fonte, via variavel*/
+}
+
+main strong{ /*ira configurar tudo que estiver dentro de strong e dentro do main*/
+
+    color: var(--cor4); /*define a cor da letra*/
+    font-weight: bold; /*define o peso da letra, no caso ficará mais escuro, negrito*/
+    padding: 2px 6px; /*define o espaço entre o conteudo e a borda*/
+    
+}
+
+main a { /*Irá configurar tudo que estiver dentro da tag a, e dentro do main*/
+
+    text-decoration: none; /*tira o sublinhad do link*/
+    font-weight: bold; /*define o peso, mais forte ou mais fraco*/
+    color: var(--cor5); /*define a cor da letra*/
+    background-color: var(--cor0); /*define a cor do fundo*/
+    padding: 2px 6px; /*define o espaço entre o conteudo e a borda*/
+    border-radius: 5px; /*define o arredondamento das bordas*/
+}
+
+
+main a:hover { /*cria o efeito de flutuar*/
+    
+    text-decoration: underline; /*quando passar o cursor por cima, irá ganhar o sublinhado, caracteristicas de links*/
+    color: var(--cor4); /*define a cor da letra*/
+
+}
+
+
+aside { /*abre o seletor para config do aside - conteudo periferico*/
+
+    background-color: var(--cor1); /*define a cor do fundo do aside, via variável*/
+    padding: 10px; /*define o espaço entre o conteudo e a borda*/
+    border-radius: 10px; /*define o arredondamento das bordas*/
+    box-shadow: 3px 3px 8px rgba(56, 45, 45, 0.281) ; /*define a sombra no box, conforme o sentido horário*/
+
+}
+
+aside > h3 { /*abre o seletor para config do h3 dentro do aside*/
+
+    background-color: var(--cor4); /*define a cor de fundo do h3*/
+    color: white; /*define a cor da letra do h3*/
+    padding: 10px; /*define o espaço entre o conteudo e a borda*/
+    margin: -10px -10px 0px -10px; /*define o espaço das margens*/
+    border-radius: 10px 10px 0px 0px; /*define o arredondamento das bordas*/
+    text-align: center; /*define o alinhamento do texto ao centro do bloco*/
+    font-family: var(--fonte-padrao); /*define a familia da fonte do h3 via variável*/
+   
+}
+
+aside > ul{ /*abre o seletor para config das listas não ordenadas*/
+
+    list-style-type: '\2714'\00A0\00A0; /*00A0 é o espaço sem quebra ???????*/
+
+    list-style-position: inside; /*posição dos icones na lista, irá para dentro*/
+
+    columns: 2 /*define em quantas colunas a lista será separada*/
+
+
+
+}
+
+
+footer { /*abre o seletor para as configuraçoes do rodapé*/
+
+    background-color: var(--cor5); /*define a cor de fundo do rodapé*/
+    color: white; /*define a cor da letra do rodapé*/
+    text-align: center; /*define o alinhamento do texto ao centro*/
+    font-size: 1em; /*define o tamanho da fonte*/
+    padding: 5px; /*define o espaço entre o conteudo e a borda*/
+}
+
+footer a { /*abre o seletor para configurar todos os a (tag a) dentro do rodapé*/
+
+    color: white; /*define a cor da letra*/
+    font-weight: bolder; /*define o peso da letra, no caso negrito*/
+    text-decoration: none; /*retira a decoração(sublinhadi) do link*/
+}
+
+footer a:hover{ /*vai dar o efeito de criar o sublinhado ao passar o cursor*/
+
+    text-decoration: underline; /*vai decorar o link com o sublinhado ao passar o cursor*/
+    color: var(--cor1); /*define a cor da letra, via variavel*/
+}
+

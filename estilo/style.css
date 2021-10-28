@@ -88,7 +88,7 @@ header > p { /*abre o seletor para as configurações APENAS dos p que estiverem
     padding-right: 10px; /*distancia entre o conteudo e a borda, para a direita*/
     padding-left: 10px; /*distancia entre o conteudo e a borda, para a esquerda*/
     margin: auto; /*centraliza o bloco*/
-    margin-bottom: 30px; /*define uma margem para baixo*/
+    padding-bottom: 40px; /*define uma margem para baixo*/
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.315); /*define sombra no bloco, começando do meio dia, sentido horário*/
 }
 nav { /*abre o seletor para as configurações APENAS dos nav*/
